@@ -1,0 +1,100 @@
+input[type="radio"] {
+    position: fixed;
+    left: -100px;
+}
+
+#container{
+    background-image: url('images/narandze.jpg');
+     background-size: cover;
+}
+
+.flex-wrap{
+   margin-top:5%;
+}
+input:not([type="radio"]) {
+    appearance: none;
+    background-color: #fff;
+    display: block;
+    transition: 300ms ease;
+    border-radius: 7px;
+    border: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0 10px;
+    overflow: hidden;
+    width: 350px;
+    opacity: 0;
+    font-size: 16px;
+    text-align: center;
+    outline: 0;
+    font-family: Roboto,sans-serif;
+}
+[id="logovanje"]:checked ~ input.logovanje, [id="registracija"]:checked ~ input.registracija{
+    max-height: 45px;
+    padding: 10px;
+    margin: 10px 0;
+    opacity: 1;
+}
+button {
+    width: 350px;
+    height: 40px;
+    border-radius: 7px;
+    font-family: Roboto,sans-serif;
+    font-size: 0;
+    margin-top:15px;
+}
+
+#dugmelog{
+    color: white;
+}
+
+#dugmelog:hover{
+    color: black;
+}
+button:before {
+    font-size: 16px;
+}
+[id="logovanje"]:checked ~ button:before {
+    content: 'Log in';
+}
+[id="registracija"]:checked ~ button:before {
+    content: 'Register';
+}
+label {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    color: black;
+    transition: 300ms ease;
+    width: calc(100% / 3 - 4px);
+    font-size: 20px;
+}
+label:after {
+    content: '';
+    border: 10px solid transparent;
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 10px);
+    transition: inherit;
+}
+[id="logovanje"]:checked ~ [for="logovanje"], [id="registracija"]:checked ~ [for="registracija"]{
+    color: #a12925;
+}
+[id="logovanje"]:checked ~ [for="logovanje"]:after,  [id="registracija"]:checked ~ [for="registracija"]:after{
+    border-bottom-color: #fff;
+}
+.flex-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 350px;
+    text-align: center;
+}
+body {
+   /* background-color: #a01616b7;*/
+    font-size: 16px;
+    font-family: Roboto,sans-serif;
+}

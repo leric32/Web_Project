@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="stil2.css">
+    <link rel="stylesheet" href="breadcrumbs.css">
+    <link rel="stylesheet" href="meni.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jezici.js"></script>
+    <script src="dodaj-recept.js"></script>
+    <script src="meni.js"></script>
+    <script src="pocetna.js"></script>
+    <title>Dodaj recept</title>
+</head>
+<body onload="ucitaj1()">
+    <article id="container" class="containerr">
+        <header id="main-nav" class="row">
+            <div class="col col-md-8 col-sm-8 col-8" style="float: left; padding: 10px;"><h1 class="logo" ><img src="images/Kuhinjica.png" style="width: 70px;height: 70px;"></h1></div>
+            <div class="col col-md-2 col-sm-2 col-2" style="right: 0px; padding: 20px;"><h5 id="korisnik" class="display-6" ></h5></div>
+            <div class="col col-md-1 col-sm-1 col-1" style="right: 0px; padding: 20px;">
+              <a class="serbia" style="size:30px;">srb</a>|<a class="uk" style="size:30px;">uk</a></div>
+            <div class="col col-md-1 col-sm-1 col-1" style='padding: 10px;'><div id="bun"><div class="mmm-burger"></div></div></div>
+          </header>
+          <section id="content" style="background-image: url('images/forma.jpg')">
+            
+            <br/>
+<div class="container">
+    <div class="row" >
+        <div class="btn-group btn-breadcrumb">
+            <a href="pocetna.html" class="btn "><i class="fa fa-home"></i></a>
+            <a href="dodaj-recept.html" class="btn ">Dodaj recept</a>
+        </div>
+    </div>
+</div>
+          
+              <div class="row" id="telo1">
+                  <div class="col col-md-2 col-sm-1 col-1">&nbsp;</div>
+                  <div class="col col-md-8 col-sm-10 col-10" id="forma"><br/>
+                        <h1 class="display-6">Podelite Vaš recept sa nama!</h1>
+                        <br/><br/>
+                        <div class="row">
+                            <div class="col col-md-6 col-sm-12" style="text-align: left;">
+                                <form>
+                                    <div class="form-group">
+                                        <label>Naziv recepta</label><br/>
+                                    <input type="text" class="form-control" id="nazivrecepta">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col col-md-6 col-sm-12" style="text-align: left;">
+                                <form>
+                                    <label>Vrsta jela</label><br/>
+                               <select class="form-control" id="vrstajela">
+                                   <option>Predjelo</option>
+                                   <option>Glavno jelo</option>
+                                   <option>Desert</option>
+                                   <option>Uzina</option>
+                               </select>
+                                </form>
+                                
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col col-md-6 col-sm-12" style="text-align: left;">
+                                <form>
+                                    <div class="form-group">
+                                        <label>Vreme</label><br/>
+                                    <input type="time" class="form-control" id="vrijeme">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col col-md-6 col-sm-12" style="text-align: left;">
+                                <form>
+                                    <label >Tezina (rastuce)</label><br/>
+                               <select class="form-control" id="tezina">
+                                   <option>1</option>
+                                   <option>2</option>
+                                   <option>3</option>
+                                   <option>4</option>
+                                   <option>5</option>
+                               </select>
+                                </form>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col col-md-12 col-sm-12" style="text-align: left;">
+                                <div class="custom-file">
+                                    <input type="text" placeholder="Izaberite sliku(separator ;)" style="width: 100%;" id="slika">
+                                    
+                                </div>
+                                <div class="custom-file">
+                                    <input type="text" placeholder="Izaberite video(separator ;)" style="width: 100%;" id="video">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col col-md-12 col-sm-12" style="text-align: left;">
+                                <form>
+                                    <label style="text-align: left;">Uputstvo za pripremu</label><br/>
+                                    <textarea style="width:100%; padding-left:5px;padding-right:5px;" class="form-control" id='opispripreme'></textarea>
+                                </form>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col col-md-12 col-sm-12" style="text-align: center;">
+                                <button class="btn btn-danger" id="dodajdugme">Submit</button>
+                                
+                            </div>
+                        </div><br/>
+                  
+                  </div>
+                  <div class="col col-md-2 col-sm-1 col-1">&nbsp;</div>
+             </div>
+             <footer class="row" id="futer" style="background-color: brown; text-align: center;">
+                <div class="col col-12">
+                  Copyright 2021, Julia Milić i Bojan Galić, Odsek za softversko  inženjerstvo Elektrotehničkog fakulteta Univeryiteta u Beogradu
+                </div>
+                
+              </footer>
+          </section>
+    </article>
+    <aside id='sidebar'>
+        <nav id='mobile-nav'>
+           
+          <h1 class="mobile-logo">  <img src="images/Kuhinjica.png" class="logo" style="width: 90px;height: 90px; align-self: center;"></h1>
+          <ul>
+            <li class="nav-item" id="pocetnastr"><h3>Pocetna</h3></li>
+            <li class="nav-item"><h3>Recepti</h3></li>
+              <ul class="sub-nav">
+                <li class="sub-nav-item" id="predjelostr"><h4>Predjelo</h4></li>
+                <li class="sub-nav-item" id="glavnojelostr"><h4>Glavno jelo</h4></li>
+                <li class="sub-nav-item" id="desertstr"><h4>Desert</h4></li>
+                <li class="sub-nav-item" id="uzinastr"><h4>Uzina</h4></li>
+              </ul>
+            <li class="nav-item" id="dodajreceptstr"><h3>Dodaj recept</h3></li>
+            <li class="nav-item" id="mojnalogstr"><h3>Moj nalog</h3></li>
+            <li class="nav-item" id="onamastr"><h3>O nama</h3></li>
+            <li class="nav-item" id="izlogujsestr"><h3>Izloguj se</h3></li>
+            <li class="nav-item" id="ulogujsestr"><h3>Uloguj se</h3></li>
+           
+          </ul>
+      </nav>
+    </aside>
+    
+</body>
+</html>

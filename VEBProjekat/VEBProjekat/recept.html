@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="recept.css">
+    <link rel="stylesheet" href="breadcrumbs.css">
+    <link rel="stylesheet" href="meni.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jezici.js"></script>
+   <script src="meni.js"></script>
+   <script src="pocetna.js"></script>
+   <script src="recept.js"></script>
+   <title>Recept</title>
+  
+</head>
+<body onload="ucitaj1()">
+    
+    <article id="container">
+      <header id="main-nav" class="row">
+        <div class="col col-md-8 col-sm-8 col-8" style="float: left; padding: 10px;"><h1 class="logo" ><img src="images/Kuhinjica.png" style="width: 70px;height: 70px;"></h1></div>
+        <div class="col col-md-2 col-sm-2 col-2" style="right: 0px; padding: 20px;"><h5 id="korisnik" class="display-6" ></h5></div>
+        <div class="col col-md-1 col-sm-1 col-1" style="right: 0px; padding: 20px;">
+          <a class="serbia" style="size:30px;">srb</a>|<a class="uk" style="size:30px;">uk</a></div>
+        <div class="col col-md-1 col-sm-1 col-1" style='padding: 10px;'><div id="bun"><div class="mmm-burger"></div></div></div>
+      </header>
+        <section id="content"  >
+         <div class="container">
+
+            <div class="row" >
+                <div class="btn-group btn-breadcrumb">
+                    <a href="pocetna.html" class="btn "><i class="fa fa-home"></i></a>
+                    <a href="pretraga.html" class="btn " id="stranica"></a>
+                    <a href="recept.html" class="btn " id="nazivrecepta"></a>
+                </div>
+            </div>
+            <div class="row" id="telo1">
+                
+                <div class="col col-md-7 col-sm-12 col-12" id="forma">
+                  
+                    <div id="carousel" class="carousel slide" data-ride="carousel" >
+                        <div class="carousel-inner">
+                         
+                        
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                </div>
+                <div class="col col-md-5 col-sm-12 col-12" id="telo3">
+                  <h6 id="nazivrecepta" class="display-4"></h6><br/>
+                  <div class="row">
+                    <div class="col col-md-4 col-sm-4 col-4">
+                      <span class="fa fa-clock-o" style="font-size: 20px;"></span>
+                        <h7 id="vremepripreme" class="display-7" ></h7><br/><br/>
+                    </div>
+                    <div class="col col-md-4 col-sm-4 col-4">
+                      <h7 class="display-5"><b>Tezina</b></h7>
+                      <h7 id="tezina" class="display-7"></h7>
+                    </div>
+                    <div class="col col-md-4 col-sm-4 col-4">
+                      <h7 class="display-5" id="naslovprosecna"><b>Prosecna ocena </b></h7>
+                        <h7 id="prosecnaocena" class="display-7" ></h7><br/><br/>
+                    </div>
+                  </div>
+                 
+                  <div class="row">
+                    <h6 class="display-5"><b>Nacin pripreme</b></h6><br/>
+                        <p id="uputstvorecepta" style="font-size: 15px;"></p>
+                  </div>
+                  
+                </div>
+         </div>
+         
+         <hr>
+         <div class="row" id="telo2">
+            <div class="container">
+                <div class="row">
+                 
+                  <div class="col col-md-12 col-sm-12 col-12" id="logout" >
+                      <div class="page-header">
+                          <h4 class="reviews display-5" style="text-align: left;">Komentari i ocene</h4><br/>
+                      </div>
+                      <div class="comment-tabs">
+                          <ul class="nav nav-tabs" role="tablist">
+                              <li class="active" id="gledaj"><a href="#comments-logout" role="tab" data-toggle="tab" id="tiptaba"><h7 class="reviews text-capitalize" display-7>Komentari &nbsp;</h7></a></li>
+                              <li><a href="#add-comment" role="tab" data-toggle="tab"><h7 id="dodajkom" class="reviews text-capitalize" display-7 id="tiptaba">&nbsp; Dodajte komentar</h7></a></li>
+                              <li><a href="#add-star" role="tab" data-toggle="tab"><h7  id="dodajocenu" class="reviews text-capitalize" display-7 id="tiptaba">&nbsp; Dajte ocenu</h7></a></li>
+                          </ul>            
+                          <div class="tab-content">
+                              <div class="tab-pane active" id="comments-logout">                
+                                <ul class="media-list">
+                                  <li class="media">
+                                    <div class="media-body">
+                                      <div class="well well-lg">
+                                          <h6 class="media-heading text-uppercase reviews"></h6>
+                                          <p class="media-comment">
+                                            
+                                          </p>
+                                      </div>              
+                                    </div>
+                                  </li>   
+                                 
+                                </ul> 
+                              </div>
+                              <div class="tab-pane" id="add-comment">
+                                  <form action="#" method="post" class="form-horizontal" id="commentForm" role="form"> 
+                                      <div class="form-group">
+                                          <label for="komentar" class="col-sm-2 control-label">Komentar</label>
+                                          <div class="col-sm-12">
+                                            <textarea class="form-control" name="addComment" id="addComment" rows="3"></textarea>
+                                          </div>
+                                      </div>
+                                     <!-- <div class="form-group">
+                                          <label for="uploadMedia" class="col-sm-2 control-label"></label>
+                                          <div class="col-sm-12">                    
+                                            <div class="custom-file">
+                                              <input type="file" class="custom-file-input" id="customFile">
+                                              <label class="custom-file-label" for="customFile">Izaberite sliku/snimak</label>
+                                          </div>
+                                          </div>
+                                        </div>-->
+                                      <div class="form-group">
+                                          <div class=" col-sm-12">                    
+                                              <button class="btn btn-danger" type="submit" id="submitComment">Dodajte komentar</button>
+                                          </div>
+                                      </div>            
+                                  </form>
+                              </div>
+                              <div class="tab-pane" id="add-star">
+                              
+                                <form action="#" method="post" class="form-horizontal" id="rateForm" role="form"> 
+                                  <div class="form-group">
+                                    <div class="col-sm-12" style="text-align: center;">
+                                      <input class="star star-1" id="star-1" type="radio" name="star" /> <label class="star star-1" for="star-1"></label>
+                                      <input class="star star-2" id="star-2" type="radio" name="star" /> <label class="star star-2" for="star-2"></label> 
+                                      <input class="star star-3" id="star-3" type="radio" name="star" /> <label class="star star-3" for="star-3"></label>
+                                      <input class="star star-4" id="star-4" type="radio" name="star" /> <label class="star star-4" for="star-4"></label>  
+                                      <input class="star star-5" id="star-5" type="radio" name="star" /><label class="star star-5" for="star-5"></label> 
+                                        &nbsp; &nbsp;
+                                        <button class="btn btn-danger" type="submit" id="rate">Dodajte ocenu</button>
+                                    </div>
+                                    
+                                  </div>
+                                </form>
+                              
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                
+                </div>
+              </div>
+         </div>
+         <br/>
+        
+     
+        </section>
+       
+        <footer class="row" id="futer" style="background-color: brown; text-align:center;">
+          <div class="col col-12">
+            Copyright 2021, Julia Milić i Bojan Galić, Odsek za softversko  inženjerstvo Elektrotehničkog fakulteta Univeryiteta u Beogradu
+          </div>
+          
+        </footer>
+
+    </article>
+    <aside id='sidebar'>
+      <nav id='mobile-nav'>
+         
+        <h1 class="mobile-logo">  <img src="images/Kuhinjica.png" class="logo" style="width: 90px;height: 90px; align-self: center;"></h1>
+        <ul>
+          <li class="nav-item" id="pocetnastr"><h3>Pocetna</h3></li>
+          <li class="nav-item"><h3>Recepti</h3></li>
+            <ul class="sub-nav">
+              <li class="sub-nav-item" id="predjelostr"><h4>Predjelo</h4></li>
+              <li class="sub-nav-item" id="glavnojelostr"><h4>Glavno jelo</h4></li>
+              <li class="sub-nav-item" id="desertstr"><h4>Desert</h4></li>
+              <li class="sub-nav-item" id="uzinastr"><h4>Uzina</h4></li>
+            </ul>
+          <li class="nav-item" id="dodajreceptstr"><h3>Dodaj recept</h3></li>
+          <li class="nav-item" id="mojnalogstr"><h3>Moj nalog</h3></li>
+          <li class="nav-item" id="onamastr"><h3>O nama</h3></li>
+          <li class="nav-item" id="izlogujsestr"><h3>Izloguj se</h3></li>
+          <li class="nav-item" id="ulogujsestr"><h3>Uloguj se</h3></li>
+         
+        </ul>
+    </nav>
+  </aside>
+</body>
+</html>

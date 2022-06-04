@@ -1,0 +1,68 @@
+.navbar{
+    background-color: white;
+    font-size: 20px;
+}
+
+.navbar-nav{
+    font-weight: 400;
+    font-family: Roboto,sans-serif;
+   
+    
+}
+
+.navbar a{
+    color:rgb(44, 44, 44);
+    margin-right: 20px;
+}
+.navbar a:hover{
+    color: red;
+    background-color: white;
+}
+
+#telo{
+    display: flex;
+}
+#blogopis{
+    background-color: white;
+}
+
+.card img{
+    height:350px;
+}
+.card{
+    width:100%;
+    text-align: center;
+}
+.card-body{
+    height:160px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #b5794170;
+}
+#prvapoz{
+    width:100%;
+    height:300px;
+}
+#kard{
+    height: max-content;
+    width:100%;
+
+}
+
+
+
+#kard a{
+    color: black;
+    font-size: 18px;
+}
+
+#telo h1{
+    color: white;
+    text-align: center;
+    margin-top:15px;
+    margin-bottom:15px;
+    font-family: Roboto,sans-serif;
+}
+
+
+

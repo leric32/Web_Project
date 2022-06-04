@@ -1,0 +1,36 @@
+.containerr{
+    background-image: url("images/forma.jpg");
+    height:100%;
+    width:100%;
+}
+
+#forma{
+    background-color: white;
+    height:100%;
+    width:100%;
+    margin-top:20px;
+    margin-bottom: 20px;
+    font-family: Roboto,sans-serif;
+    font-size: 14px;
+    border-radius: 6px;
+    
+}
+
+.display-6{
+    text-align: center;
+}
+
+.row{
+    text-align: center;
+}
+
+textarea{
+    height:160px;
+}
+
+.btn:hover{
+    color:white;
+}
+.btn{
+    color:black;
+}
