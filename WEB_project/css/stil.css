@@ -6,14 +6,9 @@
 	border: none;
 	padding: 0;
 	background: none;
+	padding:5px;
 }
-.thumbnail time {
-	background: #ae130c;
-	padding: 20px 0;
-	display: block;
-	text-indent: 12px;
-	color: #fff;
-}
+
 .thumbnail .caption {
 	color: #383838;
 	background: #ECECEC;
@@ -23,6 +18,11 @@
 .thumbnail:hover {
     padding: 0px;
 }
+
+.thumbnal>.caption{
+	font: 20px;
+}
+
 .thumbnail .caption a {
 	font: 20px;
 	color: #000000;
@@ -51,4 +51,17 @@ footer>.container>.row>.text-center>h5{
     color: rgba(255, 255, 255, 0.7);
     font-style: italic;
     
+}
+
+.pocetna_image{
+	object-fit:contain;
+    width:90vw;
+	height: 70vh;
+	background-color: #504f4f;
+}
+
+.baneri{
+	object-fit:fill;
+	height: 40vh;
+	width: 50vw;
 }
