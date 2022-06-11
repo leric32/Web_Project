@@ -1,3 +1,5 @@
+html, body { height: 100%;}
+
 .thumbnail {
 	position: relative;
 	margin: 0;
@@ -6,23 +8,23 @@
 	border: none;
 	padding: 0;
 	background: none;
+	padding:5px;
 }
-.thumbnail time {
-	background: #ae130c;
-	padding: 20px 0;
-	display: block;
-	text-indent: 12px;
-	color: #fff;
-}
+
 .thumbnail .caption {
 	color: #383838;
 	background: #ECECEC;
-	border-top: 6px solid #FF822F;
+	border-top: 6px solid #14A085;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.54);
 }
 .thumbnail:hover {
     padding: 0px;
 }
+
+.thumbnal>.caption{
+	font: 20px;
+}
+
 .thumbnail .caption a {
 	font: 20px;
 	color: #000000;
@@ -37,6 +39,10 @@
 footer{
     padding:0px;
 }
+body > footer {
+	position: sticky;
+	top: 100vh;
+  }
 
 footer>.container>.row>.text-center>h4{
     font-size: medium;
@@ -51,4 +57,39 @@ footer>.container>.row>.text-center>h5{
     color: rgba(255, 255, 255, 0.7);
     font-style: italic;
     
+}
+
+.pocetna_image{
+	object-fit:contain;
+    width:90vw;
+	height: 70vh;
+	background-color: #504f4f;
+}
+
+.baneri{
+	object-fit:fill;
+	height: 40vh;
+	width: 50vw;
+}
+
+.oglas_input{
+	justify-content: start;
+	display: flex;
+}
+
+.oglas_text{
+	display: flex;
+	justify-content: end;
+	font-size: large;
+}
+
+.oglas_razmak{
+	margin-top: 4vh;
+}
+
+.oglas_btn{
+	background-color: #14A085;
+	height : 5vh;
+	width : 15vh;
+	border-radius: 6px;
 }
