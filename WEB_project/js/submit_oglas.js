@@ -15,7 +15,7 @@ function submit_oglas(){
         "opis" : opis.val(),
         "autor" :autor,
         "kontakt" : kontakt.val(),
-        "komentari" : []
+        "komentari" : new Array()
     })
     localStorage.setItem("oglasi", JSON.stringify(oglasi));
     ime.val("");
