@@ -63,38 +63,86 @@ function generatePage(field){
     let kontakt = field['kontakt'];
     let ime = field['ime'];
     let opis = field['opis'];
+    $("#pageTitle").html(`${ime}`)
     var container = $("#animal_data");
-    container.html(`${autor} ${ime} itd ovde treba ispisati detalje o oglasu i ispisati komentare kao i da postoji dugme dodaj komentar`);
+    container.html("");
+    
+    var ro = $("<div>").addClass("row");
+    ro.append($("<div>").addClass("col-sm-12 display-flex justify-content-center").append($("<button>").html("Nazad").addClass("btn btn-primaty oglas_btn").attr("id", "glupi_js")));
+    container.append(ro)
 
-    for(kom of komentari){
-        if(row_count % 3 == 0){
-             row = $("<div>", {"class" : "row"});
-             container.append(row);
-             cols = "";
+    container.html(container.html()+`
+    <div class="row oglas_razmak">
+        <div class="col-lg-6 col-sm-12 oglas_text">
+         Autor:
+        </div>
+    <div class="col-lg-6 col-sm-12 oglas_input">
+        ${autor}
+    </div>
+</div>
+<div class="row oglas_razmak">
+        <div class="col-lg-6 col-sm-12 oglas_text">
+         Kontakt
+        </div>
+    <div class="col-lg-6 col-sm-12 oglas_input">
+        ${kontakt}
+    </div>
+</div>
+<div class="row oglas_razmak">
+        <div class="col-lg-6 col-sm-12 oglas_text">
+         OPis:
+        </div>
+    <div class="col-lg-6 col-sm-12 oglas_input">
+        ${opis}
+    </div>
+</div>
+        `);
+    $("#glupi_js").on("click", function(){
+        populateOglas();
+    })
+    var r = $("<div>").addClass("row");
+    r.append($("<div>").addClass("col-sm-12 col-lg-10").html(`<textarea name="opis" cols="30" rows="10" style="width: 100%;
+    height: 10vh" id="kom"></textarea>`));
+    r.append($("<div>").addClass("col-sm-12 col-lg-2").append($("<button>").html("Komentariši").addClass("btn btn-primaty oglas_btn").on("click", function(){
+        let kom = $("#kom").val();
+        let f = field;
+        f['komentari'].push({
+            "autor":localStorage.getItem("_user"),
+            "sadrzaj": kom
+        })
+        var data = localStorage.getItem("oglasi");
+        data = JSON.parse(data);
+        for(d of data){
+            if(d["autor"]==f["autor"] && f["ime"]==f["ime"]){
+                d["komentari"] = f["komentari"];
+                localStorage.setItem("oglasi", JSON.stringify(data));
+            }
         }
-        row_count += 1;
-        var col = $("<div>").addClass("col-md-4 col-sm-6 col-xs-12");
+        generatePage(field);
+    })))
+    container.append(r);
+    for(kom of komentari){
+
+        row = $("<div>", {"class" : "row"});
+        container.append(row);
+
+        var col = $("<div>").addClass("col-sm-12");
         var thumb = $("<div>").addClass("thumbnail")
         thumb.html(`<div class="caption">
         
-        <h5>Autor: autor</h5>
+        <h5>Autor: ${kom['autor']}</h5>
         </h5>
         <p>
-            opis
+        ${kom['sadrzaj']}
         </p>
         </div>`);
-        thumb.append($("<button>").html("Komentari").addClass("btn btn-primaty oglas_btn").css("width", "100%").on("click", function(){
-            let polje = field;
-            generatePage(polje);
-        }))
+        thumb.append()
         col.append(thumb)
         cols += col;
         row.append(col)
 
     }
-    container.append($("<button>").html("nazad").on("click", function (){
-        populateOglas();
-    }))
+    
 
 }
 
@@ -107,7 +155,6 @@ function populateOglas(){
     var container = $("#animal_data");
     container.html("");
     var row;
-    var cols;
     var row_count = 0;
     for(field of data){
         if(row_count % 3 == 0){
@@ -139,9 +186,8 @@ function populateOglas(){
             let polje = field;
             generatePage(polje);
         }))
-        col.append(thumb)
-        cols += col;
-        row.append(col)
+        col.append(thumb);
+        row.append(col);
 
     }
 }
