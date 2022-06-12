@@ -1,3 +1,6 @@
+var dokument = null;
+var podaci = null;
+
 function loadData(){
     if(localStorage.getItem("psi_data")==null){
         var psi = JSON.stringify(data["psi"]);
@@ -13,11 +16,15 @@ function loadData(){
     }
 }
 
-function populateData(name){
-    var data = localStorage.getItem(name);
-    data = JSON.parse(data);
+function setDoc(name){
+    dokument = name;
+    podaci = JSON.parse(localStorage.getItem(name));
+}
 
+function populateData(){
+    var data = podaci;
     var container = $("#animal_data");
+    container.html("");
     var row;
     var cols;
     var row_count = 0;
@@ -103,18 +110,17 @@ function generatePage(field){
     var r = $("<div>").addClass("row");
     r.append($("<div>").addClass("col-sm-12 col-lg-10").html(`<textarea name="opis" cols="30" rows="10" style="width: 100%;
     height: 10vh" id="kom"></textarea>`));
-    r.append($("<div>").addClass("col-sm-12 col-lg-2").append($("<button>").html("Komentariši").addClass("btn btn-primaty oglas_btn").on("click", function(){
+    r.append($("<div>").addClass("col-sm-12 col-lg-2").append($("<button>").html("Komentariši").addClass("btn btn-primaty oglas_btn").on("click", {"field":field}, function(event){
         let kom = $("#kom").val();
-        let f = field;
-        f['komentari'].push({
+        event.data.field['komentari'].push({
             "autor":localStorage.getItem("_user"),
             "sadrzaj": kom
         })
         var data = localStorage.getItem("oglasi");
         data = JSON.parse(data);
         for(d of data){
-            if(d["autor"]==f["autor"] && f["ime"]==f["ime"]){
-                d["komentari"] = f["komentari"];
+            if(d["autor"]==event.data.field["autor"] && d["ime"]==event.data.field["ime"]){
+                d["komentari"] = event.data.field["komentari"];
                 localStorage.setItem("oglasi", JSON.stringify(data));
             }
         }
@@ -138,7 +144,6 @@ function generatePage(field){
         </div>`);
         thumb.append()
         col.append(thumb)
-        cols += col;
         row.append(col)
 
     }
@@ -160,7 +165,6 @@ function populateOglas(){
         if(row_count % 3 == 0){
              row = $("<div>", {"class" : "row"});
              container.append(row);
-             cols = "";
         }
         row_count += 1;
         var autor = field['autor'];
@@ -182,12 +186,69 @@ function populateOglas(){
             ${opis}
         </p>
         </div>`);
-        thumb.append($("<button>").html("Komentari").addClass("btn btn-primaty oglas_btn").css("width", "100%").on("click", function(){
-            let polje = field;
-            generatePage(polje);
+        thumb.append($("<button>").html("Komentari").addClass("btn btn-primaty oglas_btn").css("width", "100%").on("click",{"polje":field}, function(event){
+            generatePage(event.data.polje);
         }))
         col.append(thumb);
         row.append(col);
 
     }
+}
+
+function sortiraj(){
+    var kriterijum = $("#kriterijum").val();
+    var novi_podaci = new Array();
+    novi_podaci.push(podaci[0]);
+    for(var i = 1; i<podaci.length; i++){
+        for(var j=0; j< novi_podaci.length + 1 ; j++){
+            if(kriterijum == "g"){
+                if(j == novi_podaci.length){
+                    novi_podaci.push(podaci[i]);
+                    break;
+                }
+                if(podaci[i].godine < novi_podaci[j].godine){
+                    novi_podaci.splice(j,0, podaci[i]);
+                    break;
+                }
+            }else{
+                if(j == novi_podaci.length){
+                    novi_podaci.push(podaci[i]);
+                    break;
+                }
+                if(podaci[i].ime.localeCompare(novi_podaci[j].ime) < 0){
+                    novi_podaci.splice(j,0, podaci[i]);
+                    break;
+                }
+            }
+        }
+    }
+    podaci = novi_podaci;
+    populateData();
+}
+
+function filter(){
+    setDoc(dokument);
+    var kriterijum = $("#kriterijum").val();
+    var search = $("#search_form").val();
+    if(search == ""){
+        populateData();
+        return;
+    }
+    if(kriterijum=="g"){
+        search = parseInt(search);
+    }
+    var novi_podaci = new Array();
+    for(podatak of podaci){
+        if(kriterijum=="g"){
+            if(podatak.godine == search){
+            novi_podaci.push(podatak);
+            }
+        }else{
+            if(podatak.ime.includes(search)){
+                novi_podaci.push(podatak);
+            }
+        }
+    }
+    podaci = novi_podaci;
+    populateData();
 }

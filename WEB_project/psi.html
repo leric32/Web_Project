@@ -42,8 +42,8 @@
 						</li>
 						<li><a href="izgubljeni.html">Izgubljeni ljubimci</a></li>
                         <li><a href="dodaj.html">Dodaj oglas</a></li>
-                        <li><a href="pricing.html">Moj nalog</a></li>
-                        <li><a href="contact.html">O nama</a></li>
+                        <li><a href="mojnalog.html">Moj nalog</a></li>
+                        <li><a href="onama.html">O nama</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +58,28 @@
             </div>
         </div>
         </section>
-    
+    <div class="container">
+        <div class="row display-flex justify-contnet-center">
+            <div class="col-auto text-center">
+                <label for="kriterijum">Odaberite Kriterijum</label>
+                <select name="kriterijum" id="kriterijum">
+                    <option value="g">godine</option>
+                    <option value="n">naziv</option>
+                </select>
+            </div>
+        </div>
+        <div class="row display-flex justify-contnet-center">
+            <div class="col-auto text-center">
+                <input type="text" class="form-control" id="search_form">
+            </div>
+        </div>
+        <div class="row display-flex justify-contnet-center">
+            <div class="col-auto text-center">
+                <button onclick="filter()" class="btn btn-primary oglas_btn">Trazi</button>
+                <button onclick="sortiraj()" class="btn btn-primary oglas_btn">Sortiraj</button>
+            </div>
+        </div>
+    </div>
     <div id="animal_data" class="container">
     </div>
     <footer>
@@ -87,7 +108,8 @@
 <script src="js/populate_animals.js"></script>\
 <script>
     loadData();
-    populateData("psi_data");
+    setDoc("psi_data");
+    populateData();
 </script>
 </body>
 </html>
