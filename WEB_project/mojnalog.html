@@ -1,103 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>Above Multi-purpose Free Bootstrap Responsive Template</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://webthemez.com" />
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/stil.css">
- 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<meta charset="utf-8">
+	<title>Above Multi-purpose Free Bootstrap Responsive Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="http://webthemez.com" />
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<link href="css/jcarousel.css" rel="stylesheet" />
+	<link href="css/flexslider.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/stil.css">
+
 
 </head>
+
 <body>
-<div id="wrapper">
-	<!-- start header -->
-	<header>
-		<div class="navbar navbar-default navbar-static-top">
+	<div id="wrapper">
+		<!-- start header -->
+		<header>
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" width="80px" /></a>
+					</div>
+					<div class="navbar-header">
+						<h2><a href="index.html" style="color: black; text-decoration: none;">SLAV Co. Azil</a></h2>
+					</div>
+					<div class="navbar-collapse collapse ">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">Početna</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Životinje<b
+										class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="psi.html">Psi</a></li>
+									<li><a href="macke.html">Mačke</a></li>
+									<li><a href="ptice.html">Ptice</a></li>
+								</ul>
+							</li>
+							<li><a href="izgubljeni.html">Izgubljeni ljubimci</a></li>
+							<li><a href="dodaj.html">Dodaj oglas</a></li>
+							<li class="active"><a href="mojnalog.html">Moj nalog</a></li>
+							<li><a href="onama.html">O nama</a></li>
+							<li><a href="mojnalog2.html"><i>EN</i></a></li>
+							<li><a href="#" onclick="login()"><i>Login/Logout</i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- end header -->
+		<section id="inner-headline">
 			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" width="80px" /></a>
-				</div>
-				<div class="navbar-header">
-					<h2><a href="index.html" style="color: black; text-decoration: none;">SLAV Co. Azil</a></h2>
-				</div>
-				<div class="navbar-collapse collapse ">
-					<ul class="nav navbar-nav">
-						<li><a href="index.html">Početna</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Životinje<b
-									class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="psi.html">Psi</a></li>
-								<li><a href="macke.html">Mačke</a></li>
-								<li><a href="ptice.html">Ptice</a></li>
-							</ul>
-						</li>
-						<li><a href="izgubljeni.html">Izgubljeni ljubimci</a></li>
-						<li><a href="dodaj.html">Dodaj oglas</a></li>
-						<li class="active"><a href="mojnalog.html">Moj nalog</a></li>
-						<li><a href="onama.html">O nama</a></li>
-					</ul>
+				<div class="row">
+					<div class="col-lg-12">
+						<h2 class="pageTitle">MOJ NALOG</h2>
+					</div>
 				</div>
 			</div>
-		</div>
-	</header>
-	<!-- end header -->
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">MOJ NALOG</h2>
+		</section>
+
+		<div class="container" id="oglasi"></div>
+		<div class="container" id="komentari"></div>
+
+		<footer id="f">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h4>Copyright 2022, Lazar Erić & Aleksa Račić</h4>
+						<h5>Odsek za Softversko inženjerstvo Elektrotehničkog fakulteta Univerzitet u Beogradu</h5>
+
+					</div>
+				</div>
 			</div>
-		</div>
+		</footer>
 	</div>
-	</section>
-	<div class="container">
-		Moj nalog bla bla
-	</div>
-	
-	<div class="container" id="oglasi"></div>
-	<div class="container" id="komentari"></div>
-	
-	<footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h4>Copyright  2022,  Lazar Erić & Aleksa Račić</h4>
-                    <h5>Odsek za Softversko inženjerstvo Elektrotehničkog fakulteta Univerzitet u Beogradu</h5>
-                    
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script> 
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/moj_nalog.js"></script>
+	<script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-media.js"></script>
+    <script src="js/portfolio/jquery.quicksand.js"></script>
+    <script src="js/portfolio/setting.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/owl-carousel/owl.carousel.js"></script>
+    <script src="js/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/moj_nalog.js"></script>\
+    <script>
+        populatePage();
+    </script>
 </body>
+
 </html>

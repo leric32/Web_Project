@@ -14,6 +14,19 @@ function loadData(){
         var psi = JSON.stringify(data["ptice"]);
         localStorage.setItem("ptice_data", psi)
     }
+
+    if(localStorage.getItem("psi_data2")==null){
+        var psi = JSON.stringify(data["psi2"]);
+        localStorage.setItem("psi_data2", psi)
+    }
+    if(localStorage.getItem("macke_data2")==null){
+        var psi = JSON.stringify(data["macke2"]);
+        localStorage.setItem("macke_data2", psi)
+    }
+    if(localStorage.getItem("ptice_data2")==null){
+        var psi = JSON.stringify(data["ptice2"]);
+        localStorage.setItem("ptice_data2", psi)
+    }
 }
 
 function setDoc(name){
@@ -30,9 +43,9 @@ function populateData(){
     var row_count = 0;
     for(field of data){
         if(row_count % 3 == 0){
-             row = $("<div>", {"class" : "row"});
-             container.append(row);
-             cols = "";
+            row = $("<div>", {"class" : "row"});
+            container.append(row);
+            cols = "";
         }
         row_count += 1;
         var jpg = field['slika'];
@@ -46,7 +59,7 @@ function populateData(){
 
             <div class="caption">
                 <h4>
-                    <a href="#">
+                    <a href="${link}">
                         ${ime}
                     </a>
                 </h4>
@@ -63,6 +76,7 @@ function populateData(){
 
     }
 }
+
 
 function generatePage(field){
     let autor = field['autor'];
@@ -173,7 +187,7 @@ function populateOglas(){
         var opis = field['opis'];
         var col = $("<div>").addClass("col-md-4 col-sm-6 col-xs-12");
         var thumb = $("<div>").addClass("thumbnail")
-        thumb.html(`<div class="caption">
+        thumb.html(`<div class="caption" id="${ime}">
         <h4>
             <a href="#">
                 ${ime}
@@ -186,8 +200,13 @@ function populateOglas(){
             ${opis}
         </p>
         </div>`);
-        thumb.append($("<button>").html("Komentari").addClass("btn btn-primaty oglas_btn").css("width", "100%").on("click",{"polje":field}, function(event){
+        thumb.append($("<button>").html("Komentari").addClass("btn oglas_btn").css("width", "100%").on("click",{"polje":field}, function(event){
             generatePage(event.data.polje);
+        }))
+        thumb.append($("<button>").html("Preuzmi u PDF formatu").addClass("btn oglas_btn").css("width", "100%").on("click",{"polje":field}, function(event){
+            console.log(event.data.polje.ime);
+            var elem = document.getElementById(`${event.data.polje.ime}`);
+            html2pdf(elem);
         }))
         col.append(thumb);
         row.append(col);
@@ -251,4 +270,17 @@ function filter(){
     }
     podaci = novi_podaci;
     populateData();
+}
+
+
+function login(){
+
+    if(localStorage.getItem("_user")==null || localStorage.getItem("_user")==""){
+        var ime = prompt("Username:");
+        localStorage.setItem("_user", ime)
+    }else{
+        var i = prompt("Already logged in: " + localStorage.getItem("_user") + "\nFor logout enter - yes");
+        localStorage.removeItem("_user");
+    }
+
 }

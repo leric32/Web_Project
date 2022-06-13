@@ -72,7 +72,6 @@ function populatePage(){
         }
     }
 
-
 }
 
 $(document).ready(populatePage());

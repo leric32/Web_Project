@@ -29,16 +29,6 @@ var data = {
             "autor":"Azil",
             "godine" : 3,
             "link" : "pas3.html"
-        },
-        {
-            "ime": "Jazavičar Lane",
-            "opis": "Ima najzinimljiviji hod od svih pasa, jer zbog dužine tela prednje noge idu 2 sekunde pre zadnjih.",
-            "tezina": 9,
-            "slika": "img/dog3.jpg",
-            "date": Date.now(),
-            "autor":"Azil",
-            "godine" : 2,
-            "link" : "pas3.html"
         }
     ],
     "ptice":[
@@ -95,13 +85,108 @@ var data = {
             "link" : "macka2.html"
         },
         {
-            "ime": "Nevenina macka",
-            "opis": "Beba je prava beba. Iako ima nepunu godinu i dalje voli da se mazi iprede u krilu. Stalno nosi kapu i voli da se druzi sa zekama iz našeg azila",
+            "ime": "Mers",
+            "opis": "Mers je pravi tvrdoglavko, ali kada mu osvojite srce nikada vas vise nece ispustiti iz vida. Omiljena hrana mu je Whiskas piletina.",
             "tezina": 3,
-            "slika": "img/cat1.jpg",
+            "slika": "img/cat3.jpg",
             "date": Date.now(),
             "autor":"Azil",
             "godine" : 3,
             "link" : "macka3.html"        }
+    ],
+    "psi2":[
+        {
+            "ime": "Pug Mara",
+            "opis": "Little Mara is quiet and withdrawn. Her eyes will soften everyone, so be the one I will watch them all the time.",
+            "tezina": 5,
+            "slika": "img/dog1.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 5,
+            "link" : "pas12.html"
+        },
+        {
+            "ime": "Husky Zola",
+            "opis": "The most beautiful winter dog, loves snow and is very loyal. It only takes one look in his eyes to win you over for life.",
+            "tezina": 10,
+            "slika": "img/dog2.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 4,
+            "link" : "pas22.html"
+        },
+        {
+            "ime": "Dachshund Lane",
+            "opis": "It has the most interesting gait of all dogs, because due to the length of the body, the front legs go 2 seconds before the back ones.",
+            "tezina": 9,
+            "slika": "img/dog3.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 3,
+            "link" : "pas32.html"
+        }
+    ],
+    "ptice2":[
+        {
+            "ime": "Parrot Ana",
+            "opis": "Pawy and charming, Ana is always ready for a story. She knows the basic words of the Serbian language, and she has recently started learning English. Our smart polyglot",
+            "tezina": 0.1,
+            "slika": "img/bird1.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 5,
+            "link" : "ptica12.html"
+        },
+        {
+            "ime": "Eagle Milan",
+            "opis": "Beautiful, powerful. Although he looks serious at first glance, Milan is a real soul of an eagle. He likes to cuddle, and in moments of special mood he can also sing",
+            "tezina": 5,
+            "slika": "img/bird2.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 4,
+            "link" : "ptica22.html"
+        },
+        {
+            "ime": "Parrot Srki",
+            "opis": "Little good thing, Srki likes to eat and sing the most. Sometimes he can overdo it with food, so he has to go on a diet, but even in those moments he doesn't stop radiating his positive energy.",
+            "tezina": 0.1,
+            "slika": "img/bird3.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 3,
+            "link" : "ptica32.html"
+        }
+    ],
+    "macke2":[
+        {
+            "ime": "Seherezada",
+            "opis": "As the name suggests, Scheherazade is a real queen. She likes to keep order and be the main one, but she is extremely sweet and likes to spin by the fireplace",
+            "tezina": 3,
+            "slika": "img/cat2.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 5,
+            "link" : "macka12.html"
+        },
+        {
+            "ime": "Beba",
+            "opis": "Beba is a real baby. Although he is less than a year old, he still likes to cuddle and snuggle in his lap. He always wears a hat and likes to hang out with bunnies from our shelter",
+            "tezina": 3,
+            "slika": "img/cat1.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 4, 
+            "link" : "macka22.html"
+        },
+        {
+            "ime": "Mers",
+            "opis": "Mers is a real stubborn man, but when you win his heart he will never lose sight of you again. His favorite food is Whiskas chicken.",
+            "tezina": 3,
+            "slika": "img/cat3.jpg",
+            "date": Date.now(),
+            "autor":"Azil",
+            "godine" : 3,
+            "link" : "macka32.html"        }
     ]
 }

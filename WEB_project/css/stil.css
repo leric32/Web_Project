@@ -36,13 +36,17 @@ html, body { height: 100%;}
     width: 100%;
 }
 
-footer{
+
+footer > .container > .row{
     padding:0px;
+	height: 40px;
 }
-body > footer {
-	position: sticky;
-	top: 100vh;
-  }
+
+#f {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
 
 footer>.container>.row>.text-center>h4{
     font-size: medium;
@@ -90,6 +94,6 @@ footer>.container>.row>.text-center>h5{
 .oglas_btn{
 	background-color: #14A085;
 	height : 5vh;
-	width : 15vh;
+	width : 150px;
 	border-radius: 6px;
 }
