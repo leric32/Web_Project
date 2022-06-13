@@ -7,6 +7,7 @@ function populatePage(){
     var oglasi_container = $("#oglasi");
     oglasi_container.html("");
     var user = localStorage.getItem("_user");
+    $("#mojnalog").html(`${user}`)
     var row_count = 0;
     var row1;
     var row;
